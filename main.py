@@ -23,6 +23,4 @@ while answer_state != "Exit":
     answer_state = screen.textinput(title="Guess a state", prompt="Guess a state on the map: ")
     for state in data.state:
         if state == answer_state:
-            get_mouse_click_coor(int(data[data.state == answer_state].x), int(data[data.state == answer_state].y), state)
-
-turtle.exitonclick()
+            get_mouse_click_coor(data[data.state == answer_state].x.item(), data[data.state == answer_state].y.item(), state)
